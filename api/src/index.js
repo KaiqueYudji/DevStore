@@ -27,7 +27,7 @@ app.post('/produto', async (req,resp) =>{
       let qtdestoque = req.body.qtd_estoque;
       let imgproduto = req.body.img_produto;
       let btativo = req.body.bt_ativo;
-    let dtinclusao = req.body.dt_inclusao;
+      let dtinclusao = req.body.dt_inclusao;
      
     
     let criar = {
