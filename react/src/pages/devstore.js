@@ -154,7 +154,7 @@ export default function Devjs(){
                     <div className="form">
                         <div className="titulo-form">
                             <div className="barrona"></div>
-                            <div className="texto"> { idalterando === 0 ?"Novo Produto" :"Alterar Produto"} </div>
+                            <div className="texto"> { idalterando === 0 ?"Novo Produto" :"Alterando Produto " + idalterando} </div>
                         </div>
 
                       <div className="tudin">
