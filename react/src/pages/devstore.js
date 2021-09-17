@@ -52,6 +52,10 @@ export default function Devjs(){
         toast('⭐ Produto casdastrado!');
         loading.current.complete();
         }else{
+            
+            if(isNaN(precode) || isNaN(precopor) || isNaN(avaliacao) || isNaN(qtdestoque))
+            return  toast.error("Os Campos Avaliação,Preço de, Preço por e estoque só aceitam números");
+
             loading.current.continuousStart();
             let r = await api.alterar(idalterando,nomep,categoriap,precode,precopor,avaliacao,dsproduto,qtdestoque,imgproduto,btativo,dtinclusao);
             toast('⭐ Produto alterado!');
