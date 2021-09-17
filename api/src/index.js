@@ -48,13 +48,13 @@ app.post('/produto', async (req,resp) =>{
     })
 
     if(msmusu != null)
-    return resp.send("Usuário já existe")
+    return resp.send({erro:"Usuário já existe"})
 
     if(nmproduto == '' || dscategoria == '' || precode == '' ||precopor == '' || avaliacao == "" || dsproduto == "" || qtdestoque == '' || imgproduto == '' || btativo == "" || dtinclusao == '')
-         return resp.send('Todos os campos são obrigatórios')
+         return resp.send({erro:'Todos os campos são obrigatórios'})
 
      if(isNaN(precode) || isNaN(precopor) || isNaN(avaliacao) || isNaN(qtdestoque))
-         return resp.send("Os Campos Avaliação,Preço de, Preço por e estoque só aceitam números");
+         return resp.send({erro:"Os Campos Avaliação,Preço de, Preço por e estoque só aceitam números"});
    
 
     let add = await db.tb_produto.create(criar);
@@ -78,18 +78,18 @@ app.put('/produto/:id', async (req,resp) =>{
       let btativo = req.body.bt_ativo;
       let dtinclusao = req.body.dt_inclusao;
         
-    let msmusu = await db.tb_produto.findOne({
+      let msmusu = await db.tb_produto.findOne({
         where:{nm_produto:nmproduto}
     })
 
     if(msmusu != null)
-    return resp.send("Usuário já existe")
+    return resp.send({erro:"Usuário já existe"})
 
     if(nmproduto == '' || dscategoria == '' || precode == '' ||precopor == '' || avaliacao == "" || dsproduto == "" || qtdestoque == '' || imgproduto == '' || btativo == "" || dtinclusao == '')
-         return resp.send('Todos os campos são obrigatórios')
+         return resp.send({erro:'Todos os campos são obrigatórios'})
 
      if(isNaN(precode) || isNaN(precopor) || isNaN(avaliacao) || isNaN(qtdestoque))
-         return resp.send("Os Campos Avaliação,Preço de, Preço por e estoque só aceitam números");
+         return resp.send({erro:"Os Campos Avaliação,Preço de, Preço por e estoque só aceitam números"});
 
        let alterar = await db.tb_produto.update({
         nm_produto:nmproduto,
