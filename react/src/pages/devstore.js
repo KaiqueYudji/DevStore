@@ -24,8 +24,8 @@ export default function Devjs(){
     const[dsproduto,setDsproduto] = useState('')
     const[qtdestoque,setQtdEstoque] = useState(0)
     const[imgproduto,setImgProduto] = useState('')
-    const[btativo,setBtAtivo] = useState(true)
-    const[dtinclusao,setdtInclusao] = useState(new Date())
+    const[btativo] = useState(true)
+    const[dtinclusao] = useState(new Date())
 
     const loading = useRef(null);
     
